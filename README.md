@@ -1,4 +1,7 @@
-# QA Software Requirements Relationships Modelling using FT LLMs
+# QA Software Requirements Relationships Modelling using Fine-Tuned Large Language Models (LLMs)
+
+# Author
+Unnati Shah and Siba Mishra
 
 ## Overview
 We fine-tune SciBERT to classify relationships between Quality Attributes (QAs) extracted from software requirement texts.
