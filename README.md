@@ -3,6 +3,10 @@
 # Author
 Unnati Shah and Siba Mishra
 
+# To Cite:
+Shah, Unnati, and Siba Mishra. "Operationalization-Based Modeling of Software Non-Functional Requirement Relationships: A Context-Aware Approach". 39th FLAIRS, United States of America (2026).
+
+
 ## Overview
 We fine-tune SciBERT to classify relationships between Quality Attributes (QAs) extracted from software requirement texts.
 
