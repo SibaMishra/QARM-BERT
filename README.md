@@ -1,0 +1,75 @@
+# QA Software Requirements Relationships Modelling using FT LLMs
+
+## Overview
+We fine-tune SciBERT to classify relationships between Quality Attributes (QAs) extracted from software requirement texts.
+
+## QARM Project
+- `integrated_gradients.py` #Token-level interpretability using Integrated Gradients.
+- `utils.py` #Dataset utilities and preprocessing.
+- `evaluate_model.py` #Evaluation pipeline for fine-tuned SciBERT.
+- `demo_inference.ipynb` #End-to-end notebook (demo inference + interpretability).
+- `sample_dataset.csv` #10-sample dataset for testing.
+- `requirements.txt` #Required dependencies
+
+## Repository Contents
+- `data/` - Sample anonymized QA pairs for testing.
+- `src/` - Scripts for preprocessing, training, evaluation, and feature attribution.
+- `notebooks/` - Interactive demo notebook for inference.
+- `models/` - Saved model checkpoints.
+- `requirements.txt` - Python dependencies.
+
+## Set Up and Installation
+```bash
+# 1. Create virtual environment (optional)
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. (Optional) Download SciBERT model
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+tokenizer = AutoTokenizer.from_pretrained("allenai/scibert_scivocab_uncased")
+model = AutoModelForSequenceClassification.from_pretrained("allenai/scibert_scivocab_uncased")
+
+python evaluate_model.py \
+  --model path/to/finetuned-sciBERT \
+  --data sample_dataset.csv \
+  --out results.csv \
+  --device cuda
+from integrated_gradients import IntegratedGradientsExplainer
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+tokenizer = AutoTokenizer.from_pretrained("allenai/scibert_scivocab_uncased")
+model = AutoModelForSequenceClassification.from_pretrained("path/to/finetuned-sciBERT")
+
+explainer = IntegratedGradientsExplainer(tokenizer, model, device="cuda")
+result = explainer.attribute("Security [SEP] Performance", target=1)
+print(result['tokens'])
+print(result['attributions'])
+```
+
+## Usage
+Preprocessing:
+python src/preprocess.py --input data/sample_QA_pairs.csv --output data/processed.csv
+
+Train SciBERT:
+python src/train_model.py --data data/processed.csv --epochs 5 --batch_size 16
+
+Evaluate Model:
+python src/evaluate_model.py --model models/scibert_checkpoint --data data/processed.csv
+
+Feature Importance:
+python src/integrated_gradients.py --model models/scibert_checkpoint --data data/processed.csv
+
+Demo Notebook:
+Open notebooks/demo_inference.ipynb in Jupyter or Google Colab to run inference on sample QA pairs.
+
+## Notes
+- Sample data is synthetic/anonymized to avoid copyright issues.
+- To use full IEEE, Springer, ACM abstracts, follow instructions in data/README.md for data acquisition.
+
+## License
+- MIT License
+
