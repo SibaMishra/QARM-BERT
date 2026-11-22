@@ -1,9 +1,6 @@
 # QA Software Requirements Relationships Modelling using Fine-Tuned Large Language Models (LLMs)
 
-# Author
-Unnati Shah and Siba Mishra
-
-# To Cite:
+# Citation:
 Unnati Shah, and Siba Mishra. "Operationalization-Based Modeling of Software Non-Functional Requirement Relationships: A Context-Aware Approach". Proceedings of the 39th International Florida Artificial Intelligence Research Society Conference, FLAIRS 2026, Marco Island, FL, USA, May 17-20, 2026. DOI: 10.32473/FLAIRS.39.1.141431
 
 
@@ -73,9 +70,13 @@ python src/integrated_gradients.py --model models/scibert_checkpoint --data data
 Demo Notebook:
 Open notebooks/demo_inference.ipynb in Jupyter or Google Colab to run inference on sample QA pairs.
 
+# Author
+Unnati Shah and Siba Mishra
+
 ## Notes
 - Sample data is synthetic/anonymized to avoid copyright issues.
 - To use full IEEE, Springer, ACM abstracts, follow instructions in data/README.md for data acquisition.
+
 
 ## License
 - MIT License
