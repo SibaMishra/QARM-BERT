@@ -1,4 +1,4 @@
-# QA Software Requirements Relationships Modelling using Fine-Tuned Large Language Models (LLMs)
+# QA Software Requirements Relationships Modelling using Fine-Tuned Large Language Models
 
 # Citation:
 Unnati Shah, and Siba Mishra. "Operationalization-Based Modeling of Software Non-Functional Requirement Relationships: A Context-Aware Approach". Proceedings of the 39th International Florida Artificial Intelligence Research Society Conference, FLAIRS 2026, Marco Island, FL, USA, May 17-20, 2026. DOI: 10.32473/FLAIRS.39.1.141431
