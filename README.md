@@ -4,7 +4,7 @@
 Unnati Shah and Siba Mishra
 
 # To Cite:
-Unnati Shah, and Siba Mishra. "Operationalization-Based Modeling of Software Non-Functional Requirement Relationships: A Context-Aware Approach". 39th FLAIRS, 39 (1) United States of America (2026).
+Unnati Shah, and Siba Mishra. "Operationalization-Based Modeling of Software Non-Functional Requirement Relationships: A Context-Aware Approach". Proceedings of the 39th International Florida Artificial Intelligence Research Society Conference, FLAIRS 2026, Marco Island, FL, USA, May 17-20, 2026. DOI: 10.32473/FLAIRS.39.1.141431
 
 
 ## Overview
